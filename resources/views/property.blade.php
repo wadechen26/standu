@@ -13,7 +13,7 @@
                             <div class="col-lg-12">
                                 <h2>基本信息</h2>
                                 <p>我的房子是</p>
-                                <div class="property-owner btn-group btn-group-justified" role="group" aria-label="...">
+                                <div class="property-owner btn-group btn-group-lg" role="group" aria-label="...">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-default">个人</button>
                                     </div>
