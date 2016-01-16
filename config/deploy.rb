@@ -43,8 +43,7 @@ after "laravel:create_storage_folder", "npm:update"
 after "npm:update", "gulp:build"
 after "gulp:build", "npm:remove_node_modules"
 after "npm:remove_node_modules", "laravel:link_shared"
-after "laravel:link_shared", "deploy:symlink_shared_folders"
-after "deploy:symlink_shared_folders", "deploy:set_permissions"
+after "laravel:link_shared", "deploy:set_permissions"
 after "deploy:set_permissions", "deploy:cleanup"
 after "deploy:cleanup", "laravel:migrate"
 
@@ -63,16 +62,6 @@ namespace :deploy do
     task :symlink do
         transaction do
             run "ln -nfs #{current_release} #{deploy_to}/#{current_dir}"
-        end
-    end
-
-    #symlink any folders shared across releases (e.g uploads)
-    desc "Symlink Shared Folders"
-    task :symlink_shared_folders do
-        transaction do
-            #remove deployed uploads directory, and symlink with shared version
-            run "rm -rf #{current_release}/public/images/uploads"
-            run "ln -nfs #{uploads_path} #{current_release}/public/images/uploads"
         end
     end
 
