@@ -7,7 +7,6 @@ set :domain, "standu"
 set :ssh_options, { :keys => "config/keys/#{stage}.pem" }
 set :deploy_to, "/var/www/#{domain}"
 set :uploads_path, "/var/www/#{domain}/uploads/"
-set :deploy_subdir, "sourcecode" #sub directory in repo to deploy
 set :share_path, "#{deploy_to}"
 set :copy_exclude, [".git", ".gitignore"]
 
