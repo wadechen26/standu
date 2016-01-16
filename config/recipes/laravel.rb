@@ -25,7 +25,7 @@ namespace :laravel do
     desc "Add .env file"
     task :add_env do
         transaction do
-            run "cd #{current_release} && cp #{shared_path}/cached-copy/sourcecode/.env.#{stage} .env"
+            run "cd #{current_release} && cp #{shared_path}/cached-copy/.env.example .env"
         end
     end
 end
